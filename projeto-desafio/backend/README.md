@@ -8,11 +8,13 @@ Mockito.
 COMO RODAR
 
 1) Rode o script ../database/schema.sql no seu MySQL antes de tudo.
-2) Confira usuario e senha do banco em
-   src/main/resources/application.properties.
+2) Abra src/main/resources/application.properties e ajuste
+   spring.datasource.username e spring.datasource.password para o usuario e
+   senha do seu MySQL local (o valor "root"/"root" que esta la e so um
+   exemplo generico).
 3) Suba a aplicacao:
 
-    mvnw spring-boot:run
+    mvn spring-boot:run
 
    ou pelo IntelliJ, rodando a classe GestaoFuncionariosApplication.
 
@@ -44,12 +46,12 @@ Authorization: Bearer <token>.
 
 TESTES
 
-    mvnw test
+    mvn test
 
 Cobrem CPF duplicado, codigo de cargo/departamento duplicado, matricula
 duplicada por empresa, criacao/edicao de vinculos e filtros de pesquisa.
 
-    mvnw verify
+    mvn verify
 
 Roda os testes e gera o relatorio de cobertura em
 target/site/jacoco/index.html.
